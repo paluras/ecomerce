@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 
 function Nav({count , handleSidebar } : {count : string ; handleSidebar : any}){
@@ -13,7 +14,7 @@ function Nav({count , handleSidebar } : {count : string ; handleSidebar : any}){
                 className='close' 
                 src="src\assets\icon-close.svg" 
                 alt="icon-close" />
-                <li><a href = "/collection">Collection</a></li>
+                <li><Link to="/">Collection</Link></li>
                 <li>Men</li>
                 <li>Women</li>
                 <li>About</li>

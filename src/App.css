@@ -1,9 +1,13 @@
 *{
   font-family: 'Kumbh Sans', sans-serif;
   margin: 0px;
-
-  /*NAVBAR CARD CSS */
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}
+/*NAVBAR CARD CSS */
 .menu{
   display: none;
 }
@@ -183,25 +187,66 @@ main{
 }
 
 
+/* CARD COMPENENT */
+
+.card{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: rgb(247, 241, 241);
+  width: 20vw;
+  height: 70vh;
+  margin: 30px;
+  padding: 20px;
+  border: 3px solid #da6f2f;
+  border-radius: 20px;
+}
+.home-list::-webkit-scrollbar {
+  width: 0px;
+}
+ 
+.home-list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(216, 184, 135, 0.3);
+}
+ 
+.home-list::-webkit-scrollbar-thumb {
+  background-color: rgb(236, 230, 230);
+  outline: 1px solid rgb(231, 234, 238);
+}
+
+
+.home-list{
+  display: flex;
+  overflow: scroll;
+}
+
 
 @media screen and (max-width: 700px)  {
   .menu{
     display: block;
+    height: 50%;
+    
   }
   .close{
     display: block;
+    width: 50px;
   }
   ul{
     
     flex-direction: column;
-    align-items: start;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
   .left-nav{
-    gap:30px
+    gap:30px;
+    align-items: center;
+    
   }
 
   .left-nav-items{
+    display: flex;
+    justify-content: center;
     
     height: 100%;
     width: 0;
@@ -209,8 +254,11 @@ main{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: gray;
+    background-color: rgba(241, 227, 227, 0.932);
     overflow-x: hidden;
     transition: 0.5s;
+    font-size: 32px;
+    font-weight: 700;
+    
   }
 }
