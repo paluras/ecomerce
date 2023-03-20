@@ -29,6 +29,10 @@ function App() {
         const [cartSide, setCartSide] = useState("")
         const [sideWidth, setSideWidth] = useState(false)
 
+        const resultWomen = data.products.filter(word => word.category == "Womens Footwear");
+        console.log(resultWomen);
+        const resultMen = data.products.filter(word => word.category == "Mens Footwear");
+        console.log(resultMen);
 
         function handleSidebar(){
               setSidebar(!sidebar) 
@@ -56,7 +60,7 @@ function App() {
         
     return (
         <>
-        <Nav count={count} handleSidebar={handleSidebar} cart={cart} cartSide={cartSide} handleCart={handleCart} />
+        <Nav count={count} handleSidebar={handleSidebar} cart={cart} cartSide={cartSide} handleCart={handleCart} cartItems={cartItems} />
         
       <Routes>
         <Route path='/:id' element={ <ProductDetail addToCart={addToCart} /> } />
@@ -64,10 +68,19 @@ function App() {
         <Route path='/'
         element={ 
         <Home 
-         count={count}
-         handleSidebar={handleSidebar} 
          allProducts={data.products} 
          /> } />
+         <Route path='/men'
+        element={ 
+        <Home 
+         allProducts={resultMen} 
+         /> } />
+         <Route path='/women'
+        element={ 
+        <Home 
+         allProducts={resultWomen} 
+         /> } />
+         
         
         
       

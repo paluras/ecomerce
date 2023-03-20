@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function Card({name, price, id,photo,category}:{category:string,photo:string,id:string,name:string,price:number}){
     return(
         <div className="div">
-        <Link to={id.toString()}> <div  id={id} className="card">
+        <Link to={"/"+ id.toString()}> <div  id={id} className="card">
             
             <img 
             style={{borderRadius:"20px"}}

@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-function Home({allProducts}:{allProducts:any ,count:string,handleSidebar:any}){
+function Home({allProducts}:{allProducts:any }){
    
     return(
         <div className="App">

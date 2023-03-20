@@ -43,7 +43,7 @@
     {
         "id": 6,
         "name": "SwiftStride",
-        "category": "Womens Casualwear",
+        "category": "Womens Footwear",
         "price": 167.00,
         "stock": 6,
         "photo":"src/assets/image-product-2.jpg"
@@ -51,7 +51,7 @@
     {
         "id": 7,
         "name": "AeroBounce",
-        "category": "Womens Casualwear",
+        "category": "Womens Footwear",
         "price": 30.00,
         "stock": 5,
         "photo":"src/assets/image-product-3.jpg"
@@ -59,7 +59,7 @@
     {
         "id": 8,
         "name": "PeakSprint",
-        "category": "Mens Casualwear",
+        "category": "Womens Footwear",
         "price": 49.99,
         "stock": 9,
         "photo":"src/assets/image-product-4.jpg"
@@ -67,7 +67,7 @@
     {
         "id": 9,
         "name": "ActiveFlow",
-        "category": "Mens Casualwear",
+        "category": "Mens Footwear",
         "price": 49.99,
         "offer": 39.99,
         "stock": 9,
@@ -76,7 +76,7 @@
     {
         "id": 10,
         "name": "BlazeTrack",
-        "category": "Mens Formalwear",
+        "category": "Womens Footwear",
         "price": 75.00,
         "stock": 2,
         "photo":"src/assets/image-product-2.jpg"
@@ -84,7 +84,7 @@
     {
         "id": 11,
         "name": "TurboCharge",
-        "category": "Mens Formalwear",
+        "category": "Womens Footwear",
         "price": 175.50,
         "stock": 1,
         "photo":"src/assets/image-product-3.jpg"
@@ -92,7 +92,7 @@
     {
         "id": 12,
         "name": "GravityStep",
-        "category": "Womens Formalwear",
+        "category": "Mens Footwear",
         "price": 270.00,
         "stock": 10,
         "photo":"src/assets/image-product-4.jpg"
@@ -100,7 +100,7 @@
     {
         "id": 13,
         "name": "EnergyBoost",
-        "category": "Womens Formalwear",
+        "category": "Womens Footwear",
         "price": 540.00,
         "stock": 5,
         "photo":"src/assets/image-product-1.jpg"

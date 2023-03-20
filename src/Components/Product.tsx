@@ -46,7 +46,7 @@ const ProductDetail = ({addToCart}:{addToCart : any}) => {
               <div className="buttons-price">
                 <div className="add-items">
                   <div className="minus">-</div>
-                  <div className="amount">0</div>
+                  <div className="amount">1</div>
                   <div className="plus">+</div>
                 </div>
               <div onClick={() => addToCart(product)} className="add-to-cart">
