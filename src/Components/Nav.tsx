@@ -2,9 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom"
 
 
-function Nav({count , handleSidebar } : {count : string ; handleSidebar : any}){
+function Nav({count , handleSidebar, cart ,handleCart, cartSide} : {cartSide:string,handleCart: any,cart:any,count : string ; handleSidebar : any}){
     return(
+      <div className="App">
         <nav >
+          
           <div className="left-nav">
             <img className='menu' onClick={handleSidebar} src="src\assets\icon-menu.svg" alt="" />
             <img className='logo' src='src\assets\logo.svg'></img>
@@ -23,12 +25,16 @@ function Nav({count , handleSidebar } : {count : string ; handleSidebar : any}){
             </div>
             </div>
             <div className="right-nav">
-              <img src="src\assets\icon-cart.svg" alt="" />
+              <img  onClick ={handleCart} src="src\assets\icon-cart.svg" alt="" />
+              <div style={{width:cartSide}} className="cart">
+                {cart}
+              </div>
               <img className='profile' src="src\assets\image-avatar.png" alt="" />
             </div>
           
-          
+            
         </nav>
+        </div>
     )
 }
 

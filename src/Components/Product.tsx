@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 import productsData from '../db.json';
 
 
@@ -8,15 +9,21 @@ import productsData from '../db.json';
 
 
 
-const ProductDetail = () => {
+const ProductDetail = ({addToCart}:{addToCart : any}) => {
+
+
   const { id } = useParams();
 
   
-  const product = productsData.products.find((p) => p.id.toString() === (id));
+
+
+  
+  const product : any = productsData.products.find((p) => p.id.toString() === (id));
   console.log(id);
 
     return(
         <main>
+        
         <div className="left-main-imgs">
           <img src={product?.photo} alt="" />
           <div className="bottom-imgs">
@@ -42,7 +49,7 @@ const ProductDetail = () => {
                   <div className="amount">0</div>
                   <div className="plus">+</div>
                 </div>
-              <div className="add-to-cart">
+              <div onClick={() => addToCart(product)} className="add-to-cart">
                 <img src="src\assets\icon-cart.svg" alt="cart" />
                 Add to cart
                 </div>  
