@@ -5,7 +5,7 @@
         "category": "Womens Footwear",
         "price": 99.00,
         "stock": 5,
-        "photo":"https://github.com/paluras/ecomerce/blob/master/src/assets/image-product-1.jpg"
+        "photo":"https://raw.githubusercontent.com/paluras/ecomerce/master/src/assets/image-product-1.jpg"
     },
     {
         "id": 2,
