@@ -8,6 +8,8 @@ import "./App.css"
 import { useParams } from 'react-router-dom';
 import ProductDetail from './Components/Product';
 import Nav from './Components/Nav';
+import About from './Components/About';
+import AboutUs from './Components/Contacts';
 
 
 
@@ -28,11 +30,22 @@ function App() {
         const [cartItems, setCartItems] = useState<CartItem[]>([]);
         const [cartSide, setCartSide] = useState("")
         const [sideWidth, setSideWidth] = useState(false)
-
+        const [prductCount , setProductCount] = useState(1)      
         const resultWomen = data.products.filter(word => word.category == "Womens Footwear");
         console.log(resultWomen);
         const resultMen = data.products.filter(word => word.category == "Mens Footwear");
         console.log(resultMen);
+
+
+
+        function handlePlus(){
+                setProductCount(prevstate => prevstate + 1)
+              }
+            
+              function handleMinus(){
+                setProductCount(prevstate => prevstate - 1)
+              }
+
 
         function handleSidebar(){
               setSidebar(!sidebar) 
@@ -44,26 +57,30 @@ function App() {
                 sideWidth?setCartSide("200px"): setCartSide("") 
           }
 
-        const addToCart = (item: any) => {
-                setCartItems([...cartItems, item]);
-              }
 
-                        let cart =   <div className='thecart'>
-                        {cartItems.map((item) => (
+
+        const addToCart = (item: any) => {
+                setCartItems([...cartItems, item]) ;
+              }
+              
+              
+        let cart = <div className='thecart'>
+                        {cartItems.map((item ) => (
                 <div key={item.id}>
                 <img src={item.photo}></img>
                 <p>{item.name} - {item.price}$</p>
                 </div>
                 ))}     <button>CheckOut</button>
                         </div>
-       
+     
+     
         
     return (
         <>
         <Nav count={count} handleSidebar={handleSidebar} cart={cart} cartSide={cartSide} handleCart={handleCart} cartItems={cartItems} />
         
       <Routes>
-        <Route path='/:id' element={ <ProductDetail addToCart={addToCart} /> } />
+        <Route path='/:id' element={ <ProductDetail addToCart={addToCart} prductCount={prductCount} handlePlus={handlePlus} handleMinus={handleMinus} /> } />
         
         <Route path='/'
         element={ 
@@ -86,6 +103,8 @@ function App() {
       
       
       </Routes>
+                <About />
+                <AboutUs />
 </>
     )
 }

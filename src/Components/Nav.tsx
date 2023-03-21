@@ -25,10 +25,10 @@ function Nav({count , handleSidebar, cart ,handleCart, cartSide,cartItems} : {ca
             </div>
             </div>
             <div className="right-nav">
-              <>
+              <div className="uno">
               <img  onClick ={handleCart} src="src\assets\icon-cart.svg" alt="" />
               <div className="cart-items">{cartItems.length}</div>
-              </>
+              </div>
               <div style={{width:cartSide}} className="cart">
                 {cart}
               </div>

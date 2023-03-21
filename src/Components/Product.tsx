@@ -9,12 +9,13 @@ import productsData from '../db.json';
 
 
 
-const ProductDetail = ({addToCart}:{addToCart : any}) => {
-
-
-  const { id } = useParams();
+const ProductDetail = ({addToCart, handlePlus , handleMinus, prductCount}:{prductCount: number,handlePlus: any , handleMinus: any,addToCart : any}) => {
 
   
+  const { id } = useParams();
+
+ 
+ 
 
 
   
@@ -45,9 +46,9 @@ const ProductDetail = ({addToCart}:{addToCart : any}) => {
                 <div className="oldprice">123</div>
               <div className="buttons-price">
                 <div className="add-items">
-                  <div className="minus">-</div>
-                  <div className="amount">1</div>
-                  <div className="plus">+</div>
+                  <div onClick={handleMinus} className="minus">-</div>
+                  <div className="amount">{prductCount}</div>
+                  <div onClick={handlePlus} className="plus">+</div>
                 </div>
               <div onClick={() => addToCart(product)} className="add-to-cart">
                 <img src="src\assets\icon-cart.svg" alt="cart" />
