@@ -9,7 +9,7 @@ function About(){
             <div className="img-container">
                 <img></img>
                 <img></img>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis explicabo consequatur tempora error cumque quos soluta cum praesentium nemo velit doloremque abiciatis.
+                Lorem ipsum dolor sit ametdolo abiciatis.
                 </div>
             </div>
         </div>
