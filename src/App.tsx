@@ -11,11 +11,6 @@ import Nav from './Components/Nav';
 import About from './Components/About';
 import AboutUs from './Components/Contacts';
 
-
-
-
-
-
 function App() {
 
         interface CartItem {
@@ -23,6 +18,7 @@ function App() {
                 name: string;
                 price: number;
                 photo:string;
+                quantity:number;
               }
         
         const [count, setCount] = useState("")
@@ -32,12 +28,8 @@ function App() {
         const [sideWidth, setSideWidth] = useState(false)
         const [prductCount , setProductCount] = useState(1)      
         const resultWomen = data.products.filter(word => word.category == "Womens Footwear");
-        console.log(resultWomen);
         const resultMen = data.products.filter(word => word.category == "Mens Footwear");
-        console.log(resultMen);
-
-
-
+       
         function handlePlus(){
                 setProductCount(prevstate => prevstate + 1)
               }
@@ -46,7 +38,6 @@ function App() {
                 setProductCount(prevstate => prevstate - 1)
               }
 
-
         function handleSidebar(){
               setSidebar(!sidebar) 
               sidebar?setCount("300px"): setCount("") 
@@ -54,26 +45,39 @@ function App() {
 
         function handleCart(){
                 setSideWidth(!sideWidth) 
-                sideWidth?setCartSide("200px"): setCartSide("") 
+                sideWidth?setCartSide("300px"): setCartSide("") 
           }
 
-
-
         const addToCart = (item: any) => {
-                setCartItems([...cartItems, item]) ;
+                const existingItemIndex = cartItems.findIndex(cartItem => cartItem.id ===item.id)
+                if(existingItemIndex >= 0){
+                        const updateCartItems = [...cartItems]
+                        updateCartItems[existingItemIndex].quantity += prductCount;
+                        setCartItems(updateCartItems)
+                }else{  
+                        const newCartItem = {...item, quantity: prductCount};
+                        setCartItems([...cartItems, newCartItem]);
+                }
+                
               }
+
+        const removeFromCart = (itemId:any) => {
+                const newCartItems = cartItems.filter(item => item.id !== itemId )
+                setCartItems(newCartItems)
+        }      
               
               
         let cart = <div className='thecart'>
-                        {cartItems.map((item ) => (
-                <div key={item.id}>
+                        {cartItems.map((item) => (
+                <div key={item.id}
+                        >{item.quantity}
                 <img src={item.photo}></img>
                 <p>{item.name} - {item.price}$</p>
+                <img onClick={() => removeFromCart(item.id)}
+                 className='delete' src="https://raw.githubusercontent.com/paluras/ecomerce/cbcdf196ab94f7a391739ec4b84a367ef76d46c6/src/assets/icon-delete.svg" alt="" />
                 </div>
                 ))}     <button>CheckOut</button>
                         </div>
-     
-     
         
     return (
         <>
@@ -98,10 +102,6 @@ function App() {
          allProducts={resultWomen} 
          /> } />
          
-        
-        
-      
-      
       </Routes>
                 <About />
                 <AboutUs />

@@ -3,35 +3,24 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import productsData from '../db.json';
 
-
-
-//console.log(smth);
-
-
-
 const ProductDetail = ({addToCart, handlePlus , handleMinus, prductCount}:{prductCount: number,handlePlus: any , handleMinus: any,addToCart : any}) => {
-
-  
+ 
   const { id } = useParams();
 
- 
- 
-
-
-  
   const product : any = productsData.products.find((p) => p.id.toString() === (id));
   console.log(id);
 
     return(
+      <div className="App">
         <main>
         
         <div className="left-main-imgs">
           <img src={product?.photo} alt="" />
           <div className="bottom-imgs">
-              <img src="src\assets\image-product-1-thumbnail.jpg" alt="" />
-              <img src="src\assets\image-product-1-thumbnail.jpg" alt="" />
-              <img src="src\assets\image-product-1-thumbnail.jpg" alt="" />
-              <img src="src\assets\image-product-1-thumbnail.jpg" alt="" />
+              <img src="https://raw.githubusercontent.com/paluras/ecomerce/master/src/assets/image-product-1-thumbnail.jpg" alt="thumb" />
+              <img src="https://raw.githubusercontent.com/paluras/ecomerce/master/src/assets/image-product-1-thumbnail.jpg" alt="thumb" />
+              <img src="https://raw.githubusercontent.com/paluras/ecomerce/master/src/assets/image-product-1-thumbnail.jpg" alt="thumb" />
+              <img src="https://raw.githubusercontent.com/paluras/ecomerce/master/src/assets/image-product-1-thumbnail.jpg" alt="thumb" />
           </div>
         </div>
         <div className="right-main-description">
@@ -51,7 +40,7 @@ const ProductDetail = ({addToCart, handlePlus , handleMinus, prductCount}:{prduc
                   <div onClick={handlePlus} className="plus">+</div>
                 </div>
               <div onClick={() => addToCart(product)} className="add-to-cart">
-                <img src="src\assets\icon-cart.svg" alt="cart" />
+                <img src="https://raw.githubusercontent.com/paluras/ecomerce/cbcdf196ab94f7a391739ec4b84a367ef76d46c6/src/assets/icon-cart.svg" alt="cart" />
                 Add to cart
                 </div>  
               </div>
@@ -60,6 +49,7 @@ const ProductDetail = ({addToCart, handlePlus , handleMinus, prductCount}:{prduc
         
         </div>
       </main>
+      </div>  
     )
 }
 
