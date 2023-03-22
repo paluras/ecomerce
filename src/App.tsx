@@ -25,7 +25,7 @@ function App() {
         const [sidebar, setSidebar] = useState(false)
         const [cartItems, setCartItems] = useState<CartItem[]>([]);
         const [cartSide, setCartSide] = useState("")
-        const [sideWidth, setSideWidth] = useState(false)
+        const [sideWidth, setSideWidth] = useState(true)
         const [prductCount , setProductCount] = useState(1)      
         const resultWomen = data.products.filter(word => word.category == "Womens Footwear");
         const resultMen = data.products.filter(word => word.category == "Mens Footwear");
@@ -40,13 +40,15 @@ function App() {
 
         function handleSidebar(){
               setSidebar(!sidebar) 
-              sidebar?setCount("300px"): setCount("") 
+              sidebar?setCount(""): setCount("300px") 
         }
 
         function handleCart(){
                 setSideWidth(!sideWidth) 
                 sideWidth?setCartSide("300px"): setCartSide("") 
           }
+          console.log(sideWidth);
+          
 
         const addToCart = (item: any) => {
                 const existingItemIndex = cartItems.findIndex(cartItem => cartItem.id ===item.id)
